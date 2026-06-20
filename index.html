@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Codex 编程学院：面向小白的前后端、数据库、部署、域名与上线学习站。">
+  <title>Codex 编程学院｜从入门到精通的网站学习站</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="backdrop backdrop-a"></div>
+  <div class="backdrop backdrop-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">C</span><span><strong>Codex 编程学院</strong><small>小白也能看懂的建站路线</small></span></a>
+    <nav class="topnav" aria-label="主导航">
+      <a href="#roadmap">学习路线</a>
+      <a href="#catalog">课程库</a>
+      <a href="#diagram">原理图</a>
+      <a href="#prompts">提示词库</a>
+      <a href="#deploy">部署域名</a>
+    </nav>
+    <button class="ghost-button" id="resetProgress" type="button">清空进度</button>
+  </header>
+  <main id="top" class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">从 0 到能独立上线一个官方可用网站</div>
+        <h1>用 Codex 学编程，把“看不懂”变成“我知道为什么”</h1>
+        <p class="hero-text">这里把前端、后端、数据库、部署、发布、域名购买这些复杂东西，拆成一条条可以按需点开的文章和课程。你可以像点外卖一样选主题，也可以沿着推荐路线一步一步学。</p>
+        <div class="hero-actions"><a class="primary-button" href="#catalog">开始选课</a><a class="secondary-button" href="#deploy">先看上线流程</a></div>
+        <div class="hero-notes">
+          <div class="note-card"><span>学习方式</span><strong>文章 / 课程 / 清单 / 工具</strong></div>
+          <div class="note-card"><span>适合谁</span><strong>完全小白，也能跟着走</strong></div>
+          <div class="note-card"><span>学习目标</span><strong>看懂、会做、会部署</strong></div>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-top"><span class="pill">你的学习进度</span><div class="progress-ring"><div><strong id="progressPercent">0%</strong><span>完成度</span></div></div></div>
+        <div class="stats-grid">
+          <article class="stat-box"><span>课程总数</span><strong id="lessonCount">0</strong></article>
+          <article class="stat-box"><span>已完成</span><strong id="completedCount">0</strong></article>
+          <article class="stat-box"><span>当前筛选</span><strong id="visibleCount">0</strong></article>
+          <article class="stat-box"><span>推荐路径</span><strong>4 个阶段</strong></article>
+        </div>
+        <div class="panel-callout"><strong>学习秘诀：</strong>先看“网站是怎么跑起来的”，再学“自己怎么写页面”，接着连数据库，最后学上线和域名。</div>
+      </aside>
+    </section>
+    <section class="section" id="roadmap"><div class="section-head"><div><span class="section-kicker">学习路线</span><h2>先看懂，再动手，最后上线</h2></div><p>如果你完全没基础，就顺着这四步走；如果你已经会一点，也可以直接跳到你需要的模块。</p></div><div class="roadmap-grid" id="roadmapGrid"></div></section>
+    <section class="section" id="catalog">
+      <div class="section-head"><div><span class="section-kicker">课程库</span><h2>按需选择文章或者课程学习</h2></div><p>输入关键词，或者切换类型，就能快速找到你现在最需要的内容。</p></div>
+      <div class="catalog-toolbar"><label class="search-box"><span>🔎</span><input id="searchInput" type="search" placeholder="搜索前端、后端、数据库、部署、域名、Codex …"></label><div class="filter-chips" id="typeFilters"></div></div>
+      <div class="catalog-layout"><div class="lesson-grid" id="lessonList" aria-live="polite"></div><aside class="detail-card" id="lessonDetail"><div class="detail-empty"><div class="empty-badge">点一张卡片开始</div><h3>先从“网站为什么能打开”开始</h3><p>你可以先读入门文章，也可以直接挑“部署”“域名”“数据库”这种你现在最想补的内容。</p></div></aside></div>
+    </section>
+    <section class="section" id="diagram"><div class="section-head"><div><span class="section-kicker">原理图</span><h2>一次请求网站，背后到底发生了什么</h2></div><p>把浏览器、DNS、服务器、数据库和部署之间的关系，压缩成一张好懂的流程图。</p></div><div class="flow-map"><div class="flow-node flow-emphasis"><strong>浏览器</strong><span>输入网址，开始一次访问</span></div><div class="flow-arrow">→</div><div class="flow-node"><strong>DNS / 域名</strong><span>把门牌号翻译成 IP 地址</span></div><div class="flow-arrow">→</div><div class="flow-node"><strong>服务器 / API</strong><span>负责处理请求、返回内容</span></div><div class="flow-arrow">→</div><div class="flow-node"><strong>数据库</strong><span>保存文章、用户、订单等数据</span></div></div><div class="diagram-notes"><article class="mini-note"><h3>浏览器像前台</h3><p>负责展示页面、收集输入、发起请求。</p></article><article class="mini-note"><h3>后端像厨房</h3><p>负责规则、权限、计算和数据读写。</p></article><article class="mini-note"><h3>数据库像仓库</h3><p>把信息分类存好，方便查询、修改、备份。</p></article><article class="mini-note"><h3>域名像门牌号</h3><p>让别人不用记复杂 IP，也能找到你的网站。</p></article></div></section>
+    <section class="section" id="prompts"><div class="section-head"><div><span class="section-kicker">Codex 提示词库</span><h2>让 Codex 成为你的助教，而不是黑盒</h2></div><p>下面这些提示词可以直接复制给 Codex，用来解释概念、拆项目、检查风险和生成学习计划。</p></div><div class="prompt-grid" id="promptGrid"></div></section>
+    <section class="section" id="deploy"><div class="section-head"><div><span class="section-kicker">部署与域名</span><h2>小白也能照着做的上线流程</h2></div><p>从买域名，到把域名指向它，再到发布和回滚，按步骤就能把站点送上线。</p></div><div class="deployment-grid" id="deploymentGrid"></div></section>
+    <section class="section callout-section"><div class="final-callout"><div><span class="section-kicker">你可以这样学</span><h2>先选一个最想搞懂的点，然后让 Codex 帮你拆开</h2></div><p>比如你只想先学“如何购买域名”，那就先点“部署与域名”；如果你想自己写一个能连数据库的网站，就先从“前端三件套”和“数据库入门”开始。</p></div></section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
